@@ -14,7 +14,7 @@
 
 Este repositorio contiene el proyecto **AD_PA01_2024A**, clonado desde el repositorio base indicado en la Práctica 07 de la asignatura **Aplicaciones Distribuidas**.
 
-El proyecto fue modificado en **Visual Studio 2022** para aplicar gestión de versiones con **GitHub**. Además, se realizaron cambios en el código del cliente, servidor y protocolo, colocando encabezados, comentarios y aplicando convenciones de programación.
+El proyecto fue modificado en **Visual Studio 2026** para aplicar gestión de versiones con **GitHub**. Además, se realizaron cambios en el código del cliente, servidor y protocolo, colocando encabezados, comentarios y aplicando convenciones de programación.
 
 ---
 
@@ -40,7 +40,7 @@ El proyecto permite:
 * .NET Framework
 * Windows Forms
 * TCP Sockets
-* Visual Studio 2022
+* Visual Studio 2026
 * Git
 * GitHub
 
@@ -66,7 +66,7 @@ practica07_DiegoC
 
 ### Proyecto Protocolo
 
-Se creó la clase **Protocolo**, encargada de centralizar la lógica principal de comunicación.
+Se creó la clase **Protocolo**, encargada de centralizar la lógica principal de comunicación entre cliente y servidor.
 
 En esta clase se implementaron los métodos:
 
@@ -78,7 +78,9 @@ También se mantuvieron las clases:
 * **Pedido**
 * **Respuesta**
 
-Estas clases permiten estructurar los mensajes enviados entre cliente y servidor.
+Estas clases permiten estructurar los mensajes enviados y recibidos durante la comunicación.
+
+---
 
 ### Proyecto Cliente
 
@@ -86,11 +88,19 @@ Se modificó el cliente para que utilice la clase **Protocolo** al enviar pedido
 
 El cliente ya no implementa directamente el método **HazOperacion**, sino que delega esa responsabilidad al proyecto **Protocolo**.
 
+Además, el cliente permite probar:
+
+* Ingreso con usuario y contraseña.
+* Consulta de placas.
+* Consulta del número de solicitudes realizadas.
+
+---
+
 ### Proyecto Servidor
 
 Se modificó el servidor para que utilice la clase **Protocolo** al resolver los pedidos recibidos.
 
-El servidor ya no implementa directamente el método **ResolverPedido**, sino que usa la clase **Protocolo** para procesar los comandos.
+El servidor ya no implementa directamente el método **ResolverPedido**, sino que usa la clase **Protocolo** para procesar los comandos enviados por el cliente.
 
 También se corrigió el mensaje mostrado en consola para que coincida con el puerto utilizado por el servidor.
 
@@ -104,9 +114,13 @@ También se corrigió el mensaje mostrado en consola para que coincida con el pu
 git clone https://github.com/Diego-Cevallos/practica07_DiegoC.git
 ```
 
-2. Abrir el proyecto en **Visual Studio 2022**.
+2. Abrir el proyecto en **Visual Studio 2026**.
 
-3. Abrir la solución del proyecto.
+3. Abrir la solución del proyecto:
+
+```text
+PruebaAcumulativa01_2024A.sln
+```
 
 4. Compilar la solución.
 
@@ -142,12 +156,13 @@ Se realizaron pruebas para verificar:
 * Consulta de placas válidas.
 * Validación de placas incorrectas.
 * Funcionamiento del contador de solicitudes.
+* Publicación del proyecto modificado en GitHub.
 
 ---
 
 ## Gestión de Versiones
 
-Los cambios fueron registrados mediante Git y subidos a GitHub desde Visual Studio 2022.
+Los cambios fueron registrados mediante Git y subidos a GitHub desde Visual Studio 2026.
 
 Se utilizó GitHub para:
 
@@ -155,6 +170,21 @@ Se utilizó GitHub para:
 * Registrar commits.
 * Subir los cambios del proyecto.
 * Mantener el historial de modificaciones.
+* Evidenciar las modificaciones realizadas en cliente, servidor y protocolo.
+
+---
+
+## Convenciones Aplicadas
+
+En el código se aplicaron las siguientes convenciones:
+
+* Uso de nombres descriptivos para clases, métodos y variables.
+* Uso de **PascalCase** para clases y métodos.
+* Uso de **camelCase** para variables.
+* Uso de constantes simbólicas para evitar valores sin significado.
+* Comentarios claros en las secciones principales del código.
+* Formato ordenado para mejorar la legibilidad.
+* Separación modular de responsabilidades entre cliente, servidor y protocolo.
 
 ---
 
@@ -166,5 +196,6 @@ Se utilizó GitHub para:
 * Cliente actualizado.
 * Servidor actualizado.
 * Comentarios agregados.
-* README agregado.
+* Encabezados agregados.
+* README actualizado.
 * Cambios subidos a GitHub.
